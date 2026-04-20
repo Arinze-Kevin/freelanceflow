@@ -13,6 +13,7 @@ import clientRoutes from './routes/client.routes';
 
 //Import project routes
 import projectRoutes from './routes/project.routes';
+import taskRoutes from './routes/task.routes';
 
 // Initialize express app
 const app: Application = express();
@@ -26,6 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth', authRoutes);
 app.use('/api/clients', clientRoutes);
 app.use('/api/projects', projectRoutes);
+app.use('/api', taskRoutes);
 
 // Health check route
 app.get('/', (req: Request, res: Response) => {
