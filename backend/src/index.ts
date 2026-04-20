@@ -11,6 +11,9 @@ import authRoutes from './routes/auth.routes';
 //Import client routes
 import clientRoutes from './routes/client.routes';
 
+//Import project routes
+import projectRoutes from './routes/project.routes';
+
 // Initialize express app
 const app: Application = express();
 
@@ -22,6 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/clients', clientRoutes);
+app.use('/api/projects', projectRoutes);
 
 // Health check route
 app.get('/', (req: Request, res: Response) => {
