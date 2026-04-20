@@ -34,6 +34,7 @@ export const sendError = (
 // Generate a unique invoice number
 export const generateInvoiceNumber = (): string => {
   const prefix = 'INV';
+  3;
   const timestamp = Date.now().toString().slice(-6);
   const random = Math.floor(Math.random() * 1000)
     .toString()

@@ -8,6 +8,9 @@ dotenv.config();
 // Import routes
 import authRoutes from './routes/auth.routes';
 
+//Import client routes
+import clientRoutes from './routes/client.routes';
+
 // Initialize express app
 const app: Application = express();
 
@@ -18,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/clients', clientRoutes);
 
 // Health check route
 app.get('/', (req: Request, res: Response) => {
