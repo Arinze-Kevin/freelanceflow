@@ -14,6 +14,7 @@ import clientRoutes from './routes/client.routes';
 //Import project routes
 import projectRoutes from './routes/project.routes';
 import taskRoutes from './routes/task.routes';
+import timeEntryRoutes from './routes/timeEntry.routes';
 
 // Initialize express app
 const app: Application = express();
@@ -28,6 +29,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/clients', clientRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api', taskRoutes);
+app.use('/api', timeEntryRoutes);
 
 // Health check route
 app.get('/', (req: Request, res: Response) => {
