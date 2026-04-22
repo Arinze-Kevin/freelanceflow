@@ -15,6 +15,7 @@ import clientRoutes from './routes/client.routes';
 import projectRoutes from './routes/project.routes';
 import taskRoutes from './routes/task.routes';
 import timeEntryRoutes from './routes/timeEntry.routes';
+import invoiceRoutes from './routes/invoice.routes';
 
 // Initialize express app
 const app: Application = express();
@@ -30,6 +31,7 @@ app.use('/api/clients', clientRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api', taskRoutes);
 app.use('/api', timeEntryRoutes);
+app.use('/api/invoices', invoiceRoutes);
 
 // Health check route
 app.get('/', (req: Request, res: Response) => {
