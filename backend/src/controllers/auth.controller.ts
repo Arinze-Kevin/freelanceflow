@@ -54,7 +54,11 @@ export const register = async (req: Request, res: Response): Promise<void> => {
       },
       201,
     );
-  } catch {
+    // } catch {
+    //   sendError(res, 'Something went wrong. Please try again.', 500);
+    // }
+  } catch (error) {
+    console.error('Register error:', error);
     sendError(res, 'Something went wrong. Please try again.', 500);
   }
 };
