@@ -35,7 +35,13 @@ export const getInvoices = async (
       },
     });
 
-    sendSuccess(res, 'Invoices retrieved successfully.', invoices);
+    // Calculate totals for each invoice
+    const invoicesWithTotals = invoices.map((invoice) => {
+      const totals = calculateInvoiceTotal(invoice.items, invoice.taxRate ?? 0);
+      return { ...invoice, ...totals };
+    });
+
+    sendSuccess(res, 'Invoices retrieved successfully.', invoicesWithTotals);
   } catch {
     sendError(res, 'Something went wrong. Please try again.', 500);
   }
